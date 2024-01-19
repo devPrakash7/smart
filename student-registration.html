@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Livoso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="coderthemes" name="author" />
+    <script src="logout.js"></script>
+    <!-- Theme favicon -->
+    <link rel="shortcut icon" href="assets/favicon-8fd74f43.ico">
+    <link rel="stylesheet" href="assets/theme-d32f8eb8.css">
+</head>
+
+<body>
+    <!-- Offer/Help Menu -->
+    <div class="h-10 hidden lg:flex items-center  text-white z-20">
+
+    </div>
+
+    <!-- Main Navigation Menu -->
+    <header id="navbar"
+        class="fixed lg:top-10 top-0 inset-x-0 z-20 transition-all [&.nav-sticky]:top-0 [&.nav-sticky]:bg-white dark:[&.nav-sticky]:bg-default-50">
+        <div class="h-20 flex items-center">
+            <div class="container">
+                <div class="grid lg:grid-cols-4 grid-cols-2 items-center gap-4">
+                    <div class="flex">
+                        <!-- Mobile Menu Toggle Button -->
+                        <button class="lg:hidden block " data-hs-overlay="#mobile-menu">
+                            <i data-lucide="menu" class="w-7 h-7 text-default-600 me-4 hover:text-primary"></i>
+                        </button>
+
+                        <!-- Navbar Brand Logo -->
+                        <a href="home.html">
+                            <img src="image/logo-dark-befc834f.png" alt="logo" class="h-12 flex dark:hidden">
+                            <img src="image/logo-dark-befc834f.png" alt="logo" class="h-12 hidden dark:flex">
+                        </a>
+                    </div>
+
+                    <!-- Nevigation Menu -->
+                    <ul class="menu hidden lg:flex items-center justify-center relative col-span-2">
+                        <!-- Home Menu -->
+                        <li class="menu-item">
+                            <div class="hs-dropdown relative inline-flex [--trigger:hover] [--placement:bottom]">
+                                <a class="hs-dropdown-toggle after:absolute hover:after:-bottom-10 after:inset-0 inline-flex items-center text-sm lg:text-base font-medium text-default-700 py-2 px-4 rounded-full hover:text-primary"
+                                    href="home.html">
+                                    Home
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Contact Us Link -->
+                        <li class="menu-item">
+                            <a href="contact-us.html"
+                                class="inline-flex items-center text-sm lg:text-base font-medium text-default-700 py-2 px-4 rounded-full hover:text-primary">Contact
+                                Us</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <button onclick="submitForm1()"
+                                class="inline-flex items-center gap-2 text-sm font-medium py-2.5 px-4 lg:px-6 rounded-full text-white bg-primary-500 hover:bg-primary-600 transition-all duration-200">Logout<i
+                                    class="ph ph-arrow-arc-right"></i></button>
+                        </li>
+                    </ul>
+
+                    <ul class="flex items-center justify-end gap-x-6">
+
+                        <span class="w-px h-6 bg-default-300 lg:flex hidden"></span>
+
+                        <div class="lg:flex hidden">
+                            <a href="student-registration.html"> <button
+                                    class="inline-flex items-center gap-2 text-sm font-medium py-2.5 px-4 lg:px-6 rounded-full text-white bg-primary-500 hover:bg-primary-600 transition-all duration-200">Enroll
+                                    Now <i class="ph ph-arrow-arc-right"></i></button></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Sidebar Menu) -->
+    <div id="mobile-menu"
+        class="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 left-0 transition-all transform h-full max-w-[270px] w-full z-[60] bg-white border-r border-default-200 dark:bg-default-50"
+        tabindex="-1">
+        <div
+            class="flex justify-center items-center border-b border-dashed border-default-300 h-16 transition-all duration-300">
+            <a href="home.html">
+                <img src="assets/logo-dark-befc834f.png" alt="logo" class="h-10 flex dark:hidden">
+                <img src="assets/logo-light-43c180d2.png" alt="logo" class="h-10 hidden dark:flex">
+            </a>
+        </div>
+
+        <div class="custom-scroll h-[calc(100%-4rem)]">
+            <nav class="hs-accordion-group p-4 w-full flex flex-col flex-wrap">
+                <ul class="space-y-2.5">
+                    <li>
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="home.html">
+                            <a href="home.html">Home</a>
+                        </a>
+                    </li>
+
+                    <li class="hs-accordion" id="product-categories-accordion">
+                        <a class="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-primary hs-accordion-active:bg-default-400/10 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="javascript:;">
+                            Product <i data-lucide="chevron-down"
+                                class="w-5 h-5 ms-auto hs-accordion-active:rotate-180 transition-all"></i>
+                        </a>
+
+                        <div id="product-categories-accordion"
+                            class="hs-accordion-content w-full overflow-hidden transition-[height] hidden">
+                            <ul class="pt-2 ps-2">
+                                <li>
+                                    <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                                        href="course.html">
+                                        Courses
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                                        href="course-detail.html">
+                                        Course Detail
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="contact-us.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="instructor.html">
+                            Instructor
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="faqs.html">
+                            FAQs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-default-400/10"
+                            href="error-404.html">
+                            Error Page
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <section class="flex items-center bg-default-400/10 h-14 mt-20">
+        <div class="container">
+            <div class="flex items-center">
+                <ol aria-label="Breadcrumb" class="flex items-center whitespace-nowrap min-w-0 gap-2">
+                    <li class="text-sm">
+                        <a class="flex items-center gap-2 align-middle text-default-800 transition-all leading-none hover:text-primary-500"
+                            href="#">
+                            <i class="ph-duotone ph-house text-lg"></i>
+                            Home
+                            <i class="ph-bold ph-caret-right text-base"></i>
+                        </a>
+                    </li>
+
+
+                    <li aria-current="page"
+                        class="text-sm font-medium text-primary truncate leading-none hover:text-primary-500">
+                        Student Registration
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="lg:py-16 py-6 relative">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="">
+                    <div class="max-w-xl mb-10">
+                        <span
+                            class="inline-flex items-center gap-1.5 py-1 px-3 rounded-md text-xs font-medium bg-primary/20 text-primary uppercase mb-4">Student</span>
+                        <h3 class="text-3xl font-semibold text-default-800">Apply As Student</h3>
+                    </div>
+                    <div class="">
+                        <img src="assets/instructor-7993791c.png" alt="" class="max-w-full h-full block dark:hidden">
+                        <img src="assets/instructor-drak-c61c8449.png" alt=""
+                            class="max-w-full h-full hidden dark:block">
+                    </div>
+                </div><!-- end grid-col -->
+
+                <div class="">
+                    <div class="bg-default-100 rounded-lg dark:bg-default-50">
+                        <div class="p-8">
+                            <h4 class="text-xl font-medium text-default-950 mb-2">Student Registration</h4>
+                            <p class="text-base mb-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium doloremque laudantium.</p>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="f_name">First Name</label>
+                                    <input id="f_name" name="firstName"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        type="text" placeholder="First name..." required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="l_name">Last Name</label>
+                                    <input id="l_name" name="lastName"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        type="text" placeholder="Last name..." required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="mobile_number">Mobile Number</label>
+                                    <input id="mobile_number" name="mobileNumber"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        type="text" placeholder="Mobile number..." required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="EmailAddress">Email</label>
+                                    <input id="EmailAddress" name="email"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        type="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="dob">Date of Birth</label>
+                                    <input id="dob" name="dob"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        type="date" placeholder="Date of Birth" required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="gender">Gender</label>
+                                    <select id="gender" name="gender"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark:bg-default-100"
+                                        required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="enrolled_courses">Enrolled
+                                        Courses</label>
+                                    <select id="enrolled_courses" name="enrolledCourses"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark-bg-default-100"
+                                        required>
+                                        <!-- Add your dropdown options here -->
+                                        <option value="reactNative">reactNative</option>
+                                        <option value="reactjs">reactjs</option>
+                                        <option value="nodejs">nodejs</option>
+                                        <option value="python">python</option>
+                                        <option value="digitalmarketing">digitalmarketing</option>
+                                        <option value="ui&ux">ui&ux</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm text-default-800" for="qualification">Qualification</label>
+                                    <input id="qualification" name="qualification"
+                                        class="block w-full rounded-md py-2.5 px-4 text-sm text-default-800 focus:ring-transparent border-0 dark-bg-default-100"
+                                        type="text" placeholder="Qualification" required>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end mt-6">
+                                <button onclick="submitForm();"
+                                    class="inline-flex items-center justify-center gap-2 px-8 py-2.5 rounded text-sm bg-primary text-white capitalize transition-all hover:bg-primary-500">
+                                    Register
+                                    <i class="ph ph-paper-plane-right text-base"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end grid-col -->
+            </div><!-- end grid -->
+        </div><!-- end container -->
+    </section>
+
+
+
+
+    <div class="dark">
+        <footer class="bg-default-50">
+            <div class="container">
+                <div class="lg:py-10 py-6">
+                    <div class="grid lg:grid-cols-2 items-center gap-6">
+                        <div class="">
+                            <div class="grid md:grid-cols-3 items-center gap-6">
+                                <div class="">
+                                    <h2 class="text-3xl text-default-900 font-medium mb-2">2.3k</h2>
+                                    <p class="text-sm text-default-600">Online courses</p>
+                                </div><!-- end grid-col -->
+                                <div class="">
+                                    <h2 class="text-3xl text-default-900 font-medium mb-2">500+</h2>
+                                    <p class="text-sm text-default-600">Certified Instructor</p>
+                                </div><!-- end grid-col -->
+                                <div class="">
+                                    <h2 class="text-3xl text-default-900 font-medium mb-2">99.9%</h2>
+                                    <p class="text-sm text-default-600">Success Rate</p>
+                                </div><!-- end grid-col -->
+                            </div><!-- end grid -->
+                        </div><!-- end grid-col -->
+
+                        <div class="">
+                            <div class="flex items-center lg:justify-end gap-4">
+                                <a href="#"
+                                    class="inline-flex items-center gap-6 text-sm py-2.5 px-4 xl:px-5 rounded text-white bg-primary hover:bg-primary-500 transition-all">Join
+                                    the Family</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-6 text-sm py-2.5 px-4 xl:px-5 rounded text-primary bg-primary/20 hover:bg-primary hover:text-white transition-all duration-500">Browse
+                                    all courses</a>
+                            </div>
+                        </div><!-- end grid-col -->
+                    </div><!-- end grid -->
+                </div>
+            </div><!-- end contaner -->
+
+            <div class="lg:py-10 py-6 border-t border-default-200">
+                <div class="container">
+                    <div class="grid lg:grid-cols-12 gap-6">
+                        <div class="lg:col-span-3">
+                            <div class="">
+                                <img src="image/logo-dark-befc834f.png" alt="logo" class="block dark:hidden h-10">
+                                <img src="image/logo-dark-befc834f.png" alt="logo" class="hidden dark:block h-10">
+                                <p class="my-4">Aliquam rhoncus ligula est, non pulvinar elit convallis nec. Donec
+                                    mattis odio at.</p>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <a href="javascript:void(0);"
+                                        class="h-10 w-10 inline-flex items-center justify-center backdrop-blur-2xl bg-default-200 rounded transition-all duration-500 text-default-700 hover:bg-primary hover:text-white"><i
+                                            class="ph-fill ph-facebook-logo text-2xl"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="h-10 w-10 inline-flex items-center justify-center backdrop-blur-2xl bg-default-200 rounded transition-all duration-500 text-default-700 hover:bg-primary hover:text-white"><i
+                                            class="ph-fill ph-instagram-logo text-2xl"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="h-10 w-10 inline-flex items-center justify-center backdrop-blur-2xl bg-default-200 rounded transition-all duration-500 text-default-700 hover:bg-primary hover:text-white"><i
+                                            class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="h-10 w-10 inline-flex items-center justify-center backdrop-blur-2xl bg-default-200 rounded transition-all duration-500 text-default-700 hover:bg-primary hover:text-white"><i
+                                            class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="h-10 w-10 inline-flex items-center justify-center backdrop-blur-2xl bg-default-200 rounded transition-all duration-500 text-default-700 hover:bg-primary hover:text-white"><i
+                                            class="ph-fill ph-youtube-logo text-2xl"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- end grid-col -->
+
+                        <div class="lg:col-span-6">
+                            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 mb-6">
+                                <div class="flex flex-col gap-3">
+                                    <h5 class="mb-3 font-semibold text-default-900 uppercase">Top 4 Category</h5>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Development</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Finance & Accounting</a>
+                                    </div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Design</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Business</a></div>
+                                </div><!-- end grid-col -->
+
+                                <div class="flex flex-col gap-3">
+                                    <h5 class="mb-3 font-semibold text-default-900 uppercase">Quick Links</h5>
+                                    <div class="text-default-800"><a href="javascript:void(0);">About</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Become Instructor</a>
+                                    </div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Contact</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Career</a></div>
+                                </div><!-- end grid-col -->
+
+                                <div class="flex flex-col gap-3">
+                                    <h5 class="mb-3 font-semibold text-default-900 uppercase">Support</h5>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Help Center</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">FAQs</a></div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Terms & Condition</a>
+                                    </div>
+                                    <div class="text-default-800"><a href="javascript:void(0);">Privacy Policy</a></div>
+                                </div><!-- end grid-col -->
+                            </div><!-- end grid -->
+                        </div><!-- end grid-col -->
+
+                        <div class="lg:col-span-3">
+                            <div class="flex flex-col gap-3">
+                                <h5 class="mb-3 font-semibold text-default-900 uppercase">Downlaod our app</h5>
+                                <div class="flex flex-col items-start gap-2">
+                                    <a href="#"
+                                        class="w-3/4 inline-flex items-center justify-center gap-3 px-8 py-3 bg-default-950/5 rounded transition-all duration-200 hover:bg-primary">
+                                        <img src="assets/apple-c219ac8e.svg" alt="" class="h-10 w-10">
+                                        <span>
+                                            <span class="block text-xs text-default-800">Download now</span>
+                                            <span class="block font-semibold text-default-900">App Store</span>
+                                        </span>
+                                    </a>
+                                    <a href="#"
+                                        class="w-3/4 inline-flex items-center justify-center gap-3 px-8 py-3 bg-default-950/5 rounded transition-all duration-200 hover:bg-primary">
+                                        <img src="assets/play-store-1311317c.svg" alt="" class="h-10 w-10">
+                                        <span>
+                                            <span class="block text-xs text-default-800">Download now</span>
+                                            <span class="block font-semibold text-default-900">App Store</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div><!-- end flex -->
+                        </div><!-- end grid-col -->
+                    </div><!-- end grid -->
+                </div><!-- end conteiner -->
+            </div>
+
+            <div class="py-6 border-t border-default-200">
+                <div class="container">
+                    <div class="grid lg:grid-cols-2 items-center justify-center lg:justify-between gap-6">
+                        <div>
+                            <p class="text-default-800">
+                                <script>document.write(new Date().getFullYear())</script> Design crafted <i
+                                    data-lucide="heart" class="inline h-4 w-4 text-red-500 fill-red-500"></i> by
+                                Coderthemes.com
+                            </p>
+                        </div><!-- end grid-col -->
+
+                        <div class="hs-dropdown relative flex justify-center lg:justify-end [--placement:bottom-right]">
+                            <button id="hs-dropdown-slideup-animation2" type="button"
+                                class="hs-dropdown-toggle inline-flex items-center justify-end gap-6 text-sm py-2.5 px-4 xl:px-5 rounded border border-default-950/10 text-default-900 transition-all">
+                                English
+                                <i class="ph ph-caret-down"></i>
+                            </button><!-- end dropdown button -->
+
+                            <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-[200px] transition-[opacity,margin] opacity-0 z-20 duration-300 bg-white shadow-lg rounded-lg border border-default-100 dark:bg-default-50 py-2 hidden"
+                                aria-labelledby="hs-dropdown-slideup-animation2">
+                                <ul class="flex flex-col">
+                                    <li><a class="flex items-center font-normal py-2 px-2 text-default-950 bg-default-100"
+                                            href="#">German</a></li>
+                                    <li><a class="flex items-center font-normal text-default-800 py-2 px-2 hover:text-default-950 hover:bg-default-100"
+                                            href="#">Italian</a></li>
+                                    <li><a class="flex items-center font-normal text-default-800 py-2 px-2 hover:text-default-950 hover:bg-default-100"
+                                            href="#">Spanish</a></li>
+                                    <li><a class="flex items-center font-normal text-default-800 py-2 px-2 hover:text-default-950 hover:bg-default-100"
+                                            href="#">Russian</a></li>
+                                </ul><!-- end dropdown items -->
+                            </div><!-- end dropdown menu -->
+                        </div><!-- end grid-col -->
+                    </div><!-- end grid -->
+                </div><!-- end flex -->
+            </div><!-- end flex -->
+        </footer><!-- end footer -->
+    </div>
+
+    <!-- signUp Modal -->
+    <div id="signUp"
+        class="hs-overlay fixed top-0 left-0 z-[60] transition-all duration-500 w-full h-full min-h-full items-center hidden hs-overlay-open:flex"
+        aria-overlay="true" tabindex="-1">
+        <div
+            class="hs-overlay-open:opacity-100 duration-500 opacity-0 ease-out transition-[opacity] relative max-w-full md:max-w-4xl sm:w-full sm:mx-auto shadow-sm rounded-3xl group bg-[url(../images/other/modal-bg.png)]">
+            <div class="p-10">
+                <div class="grid lg:grid-cols-2">
+                    <div class="">
+                        <div class="bg-white p-6 w-auto rounded-2xl lg:-mb-20 dark:bg-default-50">
+                            <img src="assets/auth-img-e6524fe7.png" alt="" class="lg:-mt-28">
+
+                            <h3 class="text-2xl font-medium text-default-900 my-8">Sign Up Now for your 15% OFF</h3>
+                            <p class="text-sm text-primary mb-8">Subscribe Now & Received a Discount on Your First Order
+                            </p>
+
+                            <form action="#" class="mb-10">
+                                <div class="relative z-0 mb-8 w-full group">
+                                    <input type="text" name="name"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+                                        placeholder=" " required />
+                                    <label for="name"
+                                        class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary placeholder:text-sm peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-100 peer-focus:-translate-y-6">Name</label>
+                                </div>
+                                <div class="relative z-0 mb-8 w-full group">
+                                    <input type="email" name="email"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-primary peer"
+                                        placeholder=" " required />
+                                    <label for="email"
+                                        class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary placeholder:text-sm peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-100 peer-focus:-translate-y-6">Email
+                                        address</label>
+                                </div>
+
+                                <button type="submit" class="px-6 py-3.5 text-base rounded bg-primary text-white">
+                                    Subscribe Now
+                                </button>
+                            </form>
+
+                            <div class="flex items-center justify-between gap-4 mb-12">
+                                <a href="#" class="inline-flex items-center gap-2 text-default-800"><i
+                                        class="ph-fill ph-facebook-logo text-lg text-primary"></i>Facebook</a>
+                                <a href="#" class="inline-flex items-center gap-2 text-default-800"><i
+                                        class="ph-fill ph-twitter-logo text-lg text-primary"></i>Twitter</a>
+                                <a href="#" class="inline-flex items-center gap-2 text-default-800"><i
+                                        class="ph-fill ph-instagram-logo text-lg text-primary"></i>Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-5 end-5 flex flex-col items-center bg-primary/25 rounded-full z-10 print:hidden">
+        <button
+            class="h-0 w-8 opacity-0 flex justify-center items-center transition-all duration-500 translate-y-5 z-10"
+            data-toggle="back-to-top">
+            <i class="h-5 w-5 text-primary-500 mt-1" data-lucide="chevron-up"></i>
+        </button>
+        <button class="rounded-full h-10 w-10 bg-primary text-white flex justify-center items-center z-20">
+            <i class="h-5 w-5" data-lucide="sun" id="light-theme"></i>
+            <i class="h-5 w-5" data-lucide="moon" id="dark-theme"></i>
+        </button>
+    </div>
+
+
+    <!-- Theme Js -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+
+        async function submitForm() {
+
+            try {
+
+                const firstName = document.getElementById('f_name').value;
+                const lastName = document.getElementById('l_name').value;
+                const mobileNumber = document.getElementById('mobile_number').value;
+                const email = document.getElementById('EmailAddress').value;
+                const dob = document.getElementById('dob').value;
+                const gender = document.getElementById('gender').value;
+                const enrolledCourses = document.getElementById('enrolled_courses').value;
+                const qualification = document.getElementById('qualification').value;
+
+                // Enhanced validation for null or empty fields
+                if (!firstName.trim() || !lastName.trim() || !mobileNumber.trim() || !email.trim() || !dob.trim() || !gender.trim() || !enrolledCourses.trim() || !qualification.trim()) {
+                    alert('Please fill in all the fields.');
+                    return false;
+                }
+
+                const mobileNumberRegex = /^\d{10}$/;
+                if (!mobileNumberRegex.test(mobileNumber)) {
+                    alert('Please enter a valid 10-digit mobile number.');
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                if (password.length < 8) {
+                    alert('Password must be at least 8 characters long.');
+                    return;
+                }
+
+                if (mobileNumber.length <= 10) {
+                    alert('mobileNumber must be at least 8 characters long.');
+                    return;
+                }
+
+
+                const formData = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    mobileNumber: mobileNumber,
+                    dob: dob,
+                    gender: gender,
+                    enrolledCourses: enrolledCourses,
+                    qualification: qualification
+                };
+
+                const response = await axios.post('http://localhost:8001/v1/users/registrationNewStudent', formData, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                if (response.status == 201) {
+                    alert('Student successfully registered');
+                    window.location.href = 'home.html';
+                } else {
+                    alert('Student registration failed. Please try again later.');
+                    window.location.href = 'student-registration.html';
+                }
+            } catch (error) {
+                console.error('Error during registration:', error.message);
+
+            }
+        }
+
+        async function submitForm1() {
+
+            try {
+
+                const authToken = localStorage.getItem('token');
+
+                const response = await axios.get('http://localhost:8001/v1/users/logout', {
+
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}` // Add the Authorization header with the token
+                    },
+                });
+
+                if (response.status === 200) {
+                    alert('Successfully logged out');
+                    window.location.href = 'auth-login.html';
+                }
+            } catch (error) {
+                console.error('Error during logout:', error.message);
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
