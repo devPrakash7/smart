@@ -4,23 +4,30 @@ const mongoose = require('mongoose');
 const {MONGODB_URI} = require('../keys/keys')
 //database configuration
 
-async function connectToDatabase() {
-	
-	try {
-	  await mongoose.connect(MONGODB_URI, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	  });
-	  console.log('Connected to MongoDB');
-	  // You can perform additional operations here after successful connection
-	} catch (error) {
-	  console.error('Error connecting to MongoDB:', error.message);
-	  // Handle the error or throw it to be caught by an outer try/catch block
-	  throw error;
-	}
-  }
-  
-  // Call the async function to connect to the database
-  connectToDatabase();
+console.log('MONGODB_URI.........',MONGODB_URI)
+
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true,useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true});
+
+mongoose.connection.on('connected', function(){
+    console.log('Database Connection Established.');
+});
+
+mongoose.connection.on('error', function(err){
+    console.log('Mongodb connection failed. '+err);
+    mongoose.disconnect();
+});
+
+mongoose.connection.once('open', function() {
+	console.log('MongoDB connection opened!');
+});
+
+mongoose.connection.on('reconnected', function () {
+	console.log('MongoDB reconnected!');
+});
+
+mongoose.connection.on('disconnected', function() {
+	console.log('MongoDB disconnected!');
+	mongoose.connect(MONGODB_URI, {useNewUrlParser: true,useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true},/*{server:{auto_reconnect:true}}*/);
+});
 	
 module.export = mongoose;
