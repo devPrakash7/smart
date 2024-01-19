@@ -3,5 +3,5 @@ module.exports = {
     'NODE_ENV': 'development',
     'JWT_SECRET': 'helloLovoso',
     'MONGODB_URI': 'mongodb+srv://root:livoso@909@cluster0.kllwzgp.mongodb.net/smartIntern',
-    'BASEURL': 'http://localhost:6001',
+    'BASEURL': 'http://localhost:8001',
 }

@@ -27,15 +27,6 @@ exports.signUp = async (req, res, next) => {
 
         const reqBody = req.body
 
-        const checkMail = await isValid(reqBody.email)
-
-        if (checkMail == false) return sendResponse(res, constants.WEB_STATUS_CODE.BAD_REQUEST, constants.STATUS_CODE.FAIL, 'GENERAL.blackList_mail', {}, req.headers.lang);
-
-        const existEmail = await User.findOne({ email: reqBody.email })
-
-        if (existEmail)
-            return sendResponse(res, constants.WEB_STATUS_CODE.BAD_REQUEST, constants.STATUS_CODE.FAIL, 'USER.exist_email', {}, req.headers.lang);
-
         reqBody.password = await bcrypt.hash(reqBody.password, 10);
 
         reqBody.created_at = await dateFormat.set_current_timestamp();
