@@ -6,13 +6,6 @@ const {
 const dateFormat = require('../../helper/dateformat.helper');
 const User = require('../../models/user.model')
 const Student = require('../../models/studentRegistration.model')
-const {
-    isValid
-} = require('../../services/blackListMail')
-const {
-    Usersave,
-} = require('../services/user.service');
-
 const constants = require('../../config/constants')
 const {
     JWT_SECRET
@@ -26,7 +19,6 @@ exports.signUp = async (req, res, next) => {
     try {
 
         const reqBody = req.body
-
         reqBody.password = await bcrypt.hash(reqBody.password, 10);
 
         reqBody.created_at = await dateFormat.set_current_timestamp();
@@ -38,7 +30,7 @@ exports.signUp = async (req, res, next) => {
             expiresIn: constants.URL_EXPIRE_TIME
         })
 
-        const user = await Usersave(reqBody);
+        const user = await User.create(reqBody)
 
         sendResponse(res, constants.WEB_STATUS_CODE.CREATED, constants.STATUS_CODE.SUCCESS, 'USER.signUp_success', user, req.headers.lang);
 
